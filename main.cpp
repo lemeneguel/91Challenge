@@ -29,7 +29,16 @@ int main(){
                     cout << num << " ";
                 cout << "]" << endl;
             }
+        }else if (selection == 'A' || selection == 'a') {
+            int num_to_add {};
+            cout << "Enter an integer to add to the list: ";
+            cin >>  num_to_add;
+            numbers.push_back(num_to_add);
+            cout << num_to_add << " Added " << endl;
         }
+        
+        
+        
     } while (selection != 'q' && selection != 'Q');
     
     return 0;
