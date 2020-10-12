@@ -5,11 +5,11 @@ using namespace std;
 
 int main(){
     
-    vector<int> numbers {};
+    vector<int> numbers {1, 2, 3, 4};
     char selection{};
     
     do {
-        cout << "/nP - Print numbers" << endl;
+        cout << "\nP - Print numbers" << endl;
         cout << "A - Add a number" << endl;
         cout << "M - Display mean of the numbers" << endl;
         cout << "S - Display the smallest number" << endl;
@@ -17,7 +17,20 @@ int main(){
         cout << "Q - Quit" << endl;
         cout << "\nEnter your choice: " << endl;
         cin >> selection;
-    }while (selection != 'q' && selection != 'Q');
+        
+        if (selection == 'P' || selection == 'p') {
+            
+            if (numbers.size() == 0)
+                cout <<"[] - the list is empty" << endl;
+                
+            else {
+                cout << "[ ";
+                for (auto num:numbers)
+                    cout << num << " ";
+                cout << "]" << endl;
+            }
+        }
+    } while (selection != 'q' && selection != 'Q');
     
     return 0;
     
