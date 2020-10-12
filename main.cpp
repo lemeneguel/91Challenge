@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     
-    vector<int> numbers {1, 2, 3, 4};
+    vector<int> numbers {};
     char selection{};
     
     do {
@@ -29,12 +29,21 @@ int main(){
                     cout << num << " ";
                 cout << "]" << endl;
             }
-        }else if (selection == 'A' || selection == 'a') {
+        } else if (selection == 'A' || selection == 'a') {
             int num_to_add {};
             cout << "Enter an integer to add to the list: ";
             cin >>  num_to_add;
             numbers.push_back(num_to_add);
             cout << num_to_add << " Added " << endl;
+        } else if (selection == 'M' || selection == 'm') {
+             if (numbers.size() == 0)
+                 cout <<"[] - the list is empty" << endl;
+             else {
+                 int total {};
+                 for (auto num: numbers)
+                     total += num;
+                 cout << "The mean is: " << static_cast<double>(total)/numbers.size() << endl;
+             }   
         }
         
         
