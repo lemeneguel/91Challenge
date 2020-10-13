@@ -68,10 +68,14 @@ int main(){
                         largest = num;
                 cout << "The smallest number is: " << largest << endl;
             }
+        } else if (selection == 'Q' || selection == 'q') {
+            cout << "Bye" << endl;
+        } else {
+            cout << "Unknown selection" << endl;
         }
         
     } while (selection != 'q' && selection != 'Q');
-    
+    cout << endl;
     return 0;
     
 }
