@@ -14,6 +14,7 @@ int main(){
         cout << "M - Display mean of the numbers" << endl;
         cout << "S - Display the smallest number" << endl;
         cout << "L - Display the largest number" << endl;
+        cout << "X - Erase the vector" << endl;
         cout << "Q - Quit" << endl;
         cout << "\nEnter your choice: " << endl;
         cin >> selection;
@@ -67,7 +68,32 @@ int main(){
                     if (num > largest)
                         largest = num;
                 cout << "The smallest number is: " << largest << endl;
+            } 
+            
+        //ERASE DATA    
+        } else if (selection == 'X' || selection == 'x') {
+            if (numbers.size() == 0)
+                 cout <<"[] - the list is already empty" << endl;
+            else {
+                cout << "Are you sure you want to erase the vector (Y/N) " << endl;
+                
+                char response{};
+                cin >> response;
+                switch (response){
+                    case 'y': 
+                    case 'Y':
+                        numbers = {};
+                        break;
+                    
+                    case 'n':
+                    case 'N':
+                        cout << endl;
+                        break;
+                    
+                    default: cout << "Invalid choice:" << endl;
+                }
             }
+            
         } else if (selection == 'Q' || selection == 'q') {
             cout << "Bye" << endl;
         } else {
